@@ -33,7 +33,7 @@ const MongoClient = require('mongodb').MongoClient;
 	
 	app.get("/profile",function(req,res){
 		
-		res.sendFile(__dirname + "/views/profile2.html");
+		res.sendFile(__dirname + "/views/profile.html");
 	});	
 	
 	app.get("/pages",function(req,res){
