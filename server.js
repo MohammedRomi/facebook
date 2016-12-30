@@ -31,6 +31,12 @@ const MongoClient = require('mongodb').MongoClient;
 	});	
 	
 	
+	app.get("/profile",function(req,res){
+		
+		res.sendFile(__dirname + "/views/profile2.html");
+	});	
+	
+	
 	app.get('/', function(req, res){
 		//res.sendFile(__dirname + '/index2.html');
 		db.collection('users').find().toArray(function(err, result) {
