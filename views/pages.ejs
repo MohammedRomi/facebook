@@ -42,35 +42,16 @@
 			</tfoot>-->
 			
 			<tbody>
-				<tr>
-				<td><a>Mohammed</a></td>
-				<td>mohd.romi47@gmail.com</td>
-				<td>Male</td>
-				<td>Tulkarem</td>
-				</tr>
-				
-				<tr>
-				<td>Ahmed</td>
-				<td>ahmed.romi@gmail.com</td>
-				<td>Male</td>
-				<td>Illar</td>
-				</tr>
-				
-				<tr>
-				<td>Ola</td>
-				<td>ola@gmail.com</td>
-				<td>female</td>
-				<td>tubas</td>
-				</tr>
-				
-				<tr>
-				<td>Rabayaa</td>
-				<td>rabayaa@hotmail.com</td>
-				<td>male</td>
-				<td>jenin</td>
-				</tr>
 				
 				
+					<% for(var i=0; i<users.length; i++) {%>
+					<tr>
+						<td><a><%= users[i].name %></a></td>
+						<td>rabayaa@hotmail.com</td>
+						<td><%= users[i].gender %></td>
+						<td>jenin</td>
+					</tr>
+					<% } %>
 				
 			</tbody>
 		</table>
