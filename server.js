@@ -35,12 +35,10 @@ const MongoClient = require('mongodb').MongoClient;
 		
 		res.sendFile(__dirname + "/views/profile.html");
 	});	
-	
-	app.get("/pages",function(req,res){
+	app.get("/index2",function(req,res){
 		
-		res.sendFile(__dirname + "/views/pages.html");
-	});
-	
+		res.sendFile(__dirname + "/index2.html");
+	});	
 	app.get('/', function(req, res){
 		//res.sendFile(__dirname + '/index2.html');
 		db.collection('users').find().toArray(function(err, result) {
