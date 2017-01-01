@@ -10,13 +10,16 @@
 	
 		FB.getLoginStatus(function(response) {
 		    if (response.status === 'connected') {
+				getInfo();
 				//console.log(response);
 					//document.getElementById('status').innerHTML = 'We are connected.';
 					//document.getElementById('login').style.visibility = 'hidden';
 				
 		    } else if (response.status === 'not_authorized') {
+				
 		    	//document.getElementById('status').innerHTML = 'We are not authorized.'
 		    }else {
+				getInfo();
 				//console.log(response);
 		    	//document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
 		    }
@@ -37,19 +40,22 @@
 		FB.login(function(response) {
 			if (response.status === 'connected') {
 		    	//document.getElementById('status').innerHTML = 'We are connected.';
+				getInfo();
 				
 		    } else if (response.status === 'not_authorized') {
 		    	//document.getElementById('status').innerHTML = 'We are not authorized.'
 		    }else {
 		    	//document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+				getInfo();
 		    }
 		}, {scope: 'email'});
 	}
 	var access_token="EAAB0RfIpn9wBAPHoWWh9Fx82jZAnZBXV1PcC97y678xhon6cjEVob4PrSVDZA5gw1V8fkJxRMZAyv9c6ATgW93TCs9ktRjmagzZAAtQAGW7bNboTG0GSJfSioyLMJcZBwfm7KlokwneYc3Xc9PCJxYAfHVHvF6ZBTsZD";
-	// getting basic user info
-	
+
+	var user_id="1433074020037186";
 	function getInfo() {
-		FB.api('/1433074020037186?access_token='+access_token, 'GET',{fields: 'id,picture.width(300).height(300),name,location,email,birthday,gender,work,education'}, function(response) {
+		
+		FB.api('/'+user_id+'?access_token='+access_token, 'GET',{fields: 'id,picture.width(300).height(300),name,location,email,birthday,gender,work,education'}, function(response) {
 				console.log(response);
 				//console.log(birthday);
 				document.getElementById('profileImage').src = response.picture.data.url;

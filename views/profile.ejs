@@ -98,7 +98,10 @@ integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJ
     </div><!--tab-content close-->
 
 </section><!--section close-->
-
+<% for(var i=0; i<users.length; i++) {%>
+<input type="hidden" id="accessToken" value="<%= facebook-users[0].accessToken %>"/>
+<input type="hidden" id="userId"value="<%= facebook-users[0].userId %>"/>
+<%}%>
 </body>
 
 </html>

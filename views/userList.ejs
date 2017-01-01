@@ -11,7 +11,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/dataTables.bootstrap.min.css" rel="stylesheet">
-
+<style>
+.removeItem{}
+.updateItem{}
+</style>
 	
 </head>
 <body>
@@ -49,17 +52,17 @@
 				
 					<% for(var i=0; i<users.length; i++) {%>
 					<tr id="row<%=i%>">
-						<td><a><%= users[i].name %></a></td>
+						<td><a href="profile<%= users[i].name %>"><%= users[i].name %></a></td>
 						<td><%=users[i].email%></td>
 						<td><%= users[i].gender %></td>
 						<td><%=users[i].Address%></td>
 						<td style="width: 5%;">
-							<a href="#" id="edit<%=i%>"class="glyphicon glyphicon-pencil">
+							<button id="edit<%=i%>"class="glyphicon glyphicon-pencil updateItem ">
 					
-							</a>
-							<a href="" id="remove" class="glyphicon glyphicon-trash">
+							</button>
+							<button id="remove<%=i%>" class="glyphicon glyphicon-trash removeItem">
 					
-							</a>
+							</button>
 						</td>
 					</tr>
 					<% } %>
@@ -67,7 +70,6 @@
 			</tbody>
 		</table>
 	</div>
-	
 	
 	<!--Modal-->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
@@ -98,9 +100,9 @@
                         <input type="text" id="address" placeholder="Address" size="50"></br>
                     </div></br>
 					 <!--<a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook-official">Login</i></a>-->
-					<a class="btn btn-primary btn-social btn-facebook">
+					<button onclick="login()" class="btn btn-primary btn-social btn-facebook">
 						<span class="fa fa-facebook"></span>  Sign in with Facebook
-					</a>
+					</button>
 					 
 					  
                 </div>
@@ -116,15 +118,13 @@
     </div>
 	<!--End Modal-->
 	
-	
-	
-	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 	 <script src="js/jquery.dataTables.min.js"></script>
     <script src="js/dataTables.bootstrap.min.js"></script>
+    <script src="js/facebookSdk2.js"></script>
     <script src="js/addUser.js"></script>
 	
 	<script>
