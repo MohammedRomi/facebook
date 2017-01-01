@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+	<script src="js/facebookSdk.js"></script>
+	<script src="js/jquery-3.1.1.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/profileStyle.css" rel="stylesheet">
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/script.js"></script>
+	
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body>
+
+<!--<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css" 
+integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJtE" crossorigin="anonymous">
+-->
+
+
+<nav id="sticker" class="navbar navbar-inverse">
+	<div class="container">
+		<div class="navbar-header">
+		<h2>Facebook Profile Viewer</h2>
+		</div><!--navbar-header close-->
+    </div><!--container-fluid close-->
+</nav><!--navbar navbar-inverse close-->
+<br>
+<br>
+<br>
+
+<section>
+
+<div class="container" style="margin-top: 30px;">
+	<div class="profile-head">
+		<div class="col-sm-4 col-xs-12">
+			<img id="profileImage" src="" />
+			<div class="col-xs-12" style="padding-left:20%; padding-top:3px">
+				<button class="btn btn-success" onclick="getInfo()">View Profile</button>
+			</div>
+		</div><!--col-md-4 col-sm-4 col-xs-12 close-->
+
+
+		<div class="col-md-5 col-sm-5 col-xs-12">
+			<h5 id="userName"></h5>
+			<ul id="info">
+				<li id="location"> </li>
+				<li id="email"> </li>
+				<li id="birthday"> </li>
+				<li id="gender"> </li>
+			</ul>
+		</div><!--col-md-8 col-sm-8 col-xs-12 close-->
+
+	</div><!--profile-head close-->
+</div><!--container close-->
+
+<div id="sticky" class="container">
+	<!-- Tab panes -->
+    <div class="tab-content">
+		<div class="tab-pane fade active in" id="profile">
+			<div class="container">
+				<div class="col-sm-11" style="float:left;" id="workHistory">
+					<div class="hve-pro">
+						<h3>Work History</h3>
+					</div><!--hve-pro close-->
+				</div><!--col-sm-12 close-->
+				<br clear="all" />
+
+			</div><!--container close-->
+		</div><!--tab-pane close-->
+    </div><!--tab-content close-->
+      
+	<!-- Tab panes -->
+    <div class="tab-content">
+		<div class="tab-pane fade active in" id="profile">
+			<div class="container">
+				<div class="col-sm-11" style="float:left;" id="educationHistory">
+					<div class="hve-pro">
+						<h3>Education</h3>
+					</div><!--hve-pro close-->
+				</div><!--col-sm-12 close-->
+				<br clear="all" />
+			</div><!--container close-->
+		</div><!--tab-pane close-->
+    </div><!--tab-content close-->
+
+</section><!--section close-->
+
+</body>
+
+</html>

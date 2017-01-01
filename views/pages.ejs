@@ -31,6 +31,7 @@
 					<th>Email</th>
 					<th>Gender</th>
 					<th>Address</th>
+					<th>Operations</th>
 				</tr>
 			</thead>
 			<!--
@@ -43,15 +44,23 @@
 				</tr>
 			</tfoot>-->
 			
-			<tbody>
+			<tbody id="userTable">
 				
 				
 					<% for(var i=0; i<users.length; i++) {%>
-					<tr>
+					<tr id="row<%=i%>">
 						<td><a><%= users[i].name %></a></td>
 						<td><%=users[i].email%></td>
 						<td><%= users[i].gender %></td>
 						<td><%=users[i].Address%></td>
+						<td style="width: 5%;">
+							<a href="#" id="edit<%=i%>"class="glyphicon glyphicon-pencil">
+					
+							</a>
+							<a href="" id="remove" class="glyphicon glyphicon-trash">
+					
+							</a>
+						</td>
 					</tr>
 					<% } %>
 				
@@ -86,7 +95,7 @@
 					
 					<div>
                         <label>Address</label></br>
-                        <input type="text" id="gender" placeholder="Address" size="50"></br>
+                        <input type="text" id="address" placeholder="Address" size="50"></br>
                     </div></br>
 					 <!--<a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook-official">Login</i></a>-->
 					<a class="btn btn-primary btn-social btn-facebook">
@@ -116,6 +125,7 @@
     <script src="js/bootstrap.min.js"></script>
 	 <script src="js/jquery.dataTables.min.js"></script>
     <script src="js/dataTables.bootstrap.min.js"></script>
+    <script src="js/addUser.js"></script>
 	
 	<script>
 		$('#myData').dataTable();

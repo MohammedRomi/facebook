@@ -31,10 +31,8 @@ const MongoClient = require('mongodb').MongoClient;
 	});	
 	
 	
-	app.get("/profile",function(req,res){
-		
-		res.sendFile(__dirname + "/views/profile.html");
-	});	
+	
+	
 	app.get("/index2",function(req,res){
 		
 		res.sendFile(__dirname + "/index2.html");
@@ -47,6 +45,19 @@ const MongoClient = require('mongodb').MongoClient;
 		res.render('pages.ejs', {users: result})
 		})
 	})
+	app.get('/profile', function(req, res){
+		//res.sendFile(__dirname + '/index2.html');
+		db.collection('users').find().toArray(function(err, result) {
+		if (err) return console.log(err)
+		//console.log(result);
+		res.render('profile.ejs', {users: result})
+		})
+	})
 	
-
 	
+	app.delete('/', function(req, res){
+		db.collection('users').findOneAndDelete({name: req.body.name}),
+			function(err, result){
+			if (err) return res.send(500, err);
+			}
+	})
