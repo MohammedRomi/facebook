@@ -17,8 +17,8 @@ const MongoClient = require('mongodb').MongoClient;
 			console.log(err);
 			console.log("We are not connected to database");
 		}
-		app.listen(5000, function() {
-			console.log('listening on 5000')
+		app.listen(process.env.PORT ||5000, function() {
+			console.log('listening on 5000 or https://facebook-task.herokuapp.com')
 		})
     })
 	
